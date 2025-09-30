@@ -11,7 +11,7 @@ pipeline {
     stage('Checkout') {
       steps {
         // git step uses credential ID added to Jenkins credentials
-        git url: 'https://github.com/dhananjaylavate/java-ci-sample.git', credentialsId: 'github-access-token'
+       git branch: 'main', url: 'https://github.com/dhananjaylavate/java-ci-sample.git', credentialsId: 'github-access-token'
       }
     }
 
