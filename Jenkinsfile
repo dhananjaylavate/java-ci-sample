@@ -21,7 +21,7 @@ stage('Build & Test') {
       if (isUnix()) {
         sh 'mvn clean install'
       } else {
-        bat 'mvn.cmd clean install'
+       bat '"%MAVEN_HOME%\\bin\\mvn.cmd" clean install'
       }
     }
   }
