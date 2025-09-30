@@ -15,13 +15,17 @@ pipeline {
       }
     }
 
-    stage('Build & Test') {
-      steps {
-        // run maven; 'verify' will run tests and generate reports
-        bat 'mvn clean install'
-
+stage('Build & Test') {
+  steps {
+    script {
+      if (isUnix()) {
+        sh 'mvn clean install'
+      } else {
+        bat 'mvn.cmd clean install'
       }
     }
+  }
+}
 
     stage('Publish Results & Archive') {
       steps {
