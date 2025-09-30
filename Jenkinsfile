@@ -18,7 +18,8 @@ pipeline {
     stage('Build & Test') {
       steps {
         // run maven; 'verify' will run tests and generate reports
-        sh 'mvn -B clean verify'
+        bat 'mvn clean install'
+
       }
     }
 
