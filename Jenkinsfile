@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git url: 'https://github.com/dhananjaylavate/java-ci-sample.git', credentialsId: 'github-creds-practise'
+        git url: 'https://github.com/dhananjaylavate/java-ci-sample.git', credentialsId: 'github-access-token'
       }
     }
     stage('Build & Test') {
