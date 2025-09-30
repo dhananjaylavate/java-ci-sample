@@ -15,6 +15,12 @@ pipeline {
       }
     }
 
+stage('Debug') {
+  steps {
+    bat 'echo MAVEN_HOME=%MAVEN_HOME%'
+    bat 'echo PATH=%PATH%'
+  }
+}
  stage('Build & Test') {
   steps {
     script {
@@ -29,12 +35,6 @@ pipeline {
   }
 }
 
-stage('Debug') {
-  steps {
-    bat 'echo MAVEN_HOME=%MAVEN_HOME%'
-    bat 'echo PATH=%PATH%'
-  }
-}
 
 
     stage('Publish Results & Archive') {
