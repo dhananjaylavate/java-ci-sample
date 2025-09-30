@@ -1,8 +1,8 @@
 pipeline {
   agent any
   tools {
-    jdk 'jdk11'                 // match name in Global Tool Configuration
-    maven 'maven-3.8.x'         // match name there
+    jdk 'jdk'                 // match name in Global Tool Configuration
+    maven 'maven'         // match name there
   }
   environment {
     MAVEN_OPTS = '-Xmx1024m'
