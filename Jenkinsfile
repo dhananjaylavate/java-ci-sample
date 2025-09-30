@@ -15,17 +15,20 @@ pipeline {
       }
     }
 
-stage('Build & Test') {
+ stage('Build & Test') {
   steps {
     script {
       if (isUnix()) {
         sh 'mvn clean install'
       } else {
-       bat '"%MAVEN_HOME%\\bin\\mvn.cmd" clean install'
+        // Use MAVEN_HOME directly and expand properly
+        bat "\"%MAVEN_HOME%\\bin\\mvn.cmd\" clean install"
+        
       }
     }
   }
 }
+
 
     stage('Publish Results & Archive') {
       steps {
